@@ -1,0 +1,11 @@
+
+node_modules
+dist
+.vite
+.git
+.log
+.tmp
+
+#Editor
+.vscode/*
+.DS_Store
