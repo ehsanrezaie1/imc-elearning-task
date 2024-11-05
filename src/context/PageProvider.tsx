@@ -6,7 +6,7 @@ import { componentDetail, coursesMokckData } from "../data/mockData";
 interface Props {
   children: ReactNode;
 }
-
+// In this context provider we are getting data and praparing the header info
 export function PageProvider({ children }: Props) {
   const [headerInfo, setHeaderInfo] = useState({
     title: "Course",
@@ -26,25 +26,29 @@ export function PageProvider({ children }: Props) {
     [headerInfo]
   );
 
-  useEffect(() => {
+  // Assign the header info based on the main page or details page
+  const headerInfoDetails = useMemo(() => {
     if (courseId) {
-      setHeaderInfo((prev) => ({
-        ...prev,
+      return {
         title: componentDetail.name,
         subTitle: componentDetail.startDate,
         imageSource: componentDetail.image,
         pageTitle: "Description",
-      }));
+      };
     } else {
-      setHeaderInfo((prev) => ({
-        ...prev,
+      return {
         title: "Learning status",
         subTitle: "Main page",
         imageSource: "",
         pageTitle: "Current",
-      }));
+      };
     }
   }, [courseId]);
+
+  // In this useEffect we can call the endpoint but for now we are getting mock data
+  useEffect(() => {
+    setHeaderInfo((prev) => ({ ...prev, ...headerInfoDetails }));
+  }, [headerInfoDetails]);
 
   return (
     <PageContext.Provider value={memoizedValue}>

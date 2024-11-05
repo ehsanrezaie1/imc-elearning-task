@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import { CourseDataType } from "types.ts/types";
 import { usePage } from "context";
 
+// Custome hook to handle search, assign search query, and clear the input.
 export const useSearch = () => {
   const { mainPageData } = usePage();
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +23,7 @@ export const useSearch = () => {
       const lowercasedKeyword = keyword.toLowerCase();
       setSearchQuery(keyword);
 
-      // simulate loading
+      // added some timeoute to simulate loading state
       setTimeout(() => {
         const filteredContentData = mainPageData.contents?.filter(
           (item) =>

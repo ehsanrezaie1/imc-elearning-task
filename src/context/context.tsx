@@ -6,6 +6,7 @@ import {
   PageDetailsDataType,
 } from "types.ts/types";
 
+// Default value for Each items
 const contentsDefaultData: CourseItemDataType = {
   id: 0,
   name: "",
@@ -16,6 +17,7 @@ const contentsDefaultData: CourseItemDataType = {
   progress: 0,
 };
 
+// Default value for Page details
 const defaultDetailsPageData: PageDetailsDataType = {
   name: "",
   description_data: [{ name: "", content: "" }],
@@ -26,6 +28,7 @@ const defaultDetailsPageData: PageDetailsDataType = {
   image: "",
 };
 
+// Default value for main page
 const defaultMainPageData: CourseDataType = {
   contents: [contentsDefaultData],
   count: 0,
