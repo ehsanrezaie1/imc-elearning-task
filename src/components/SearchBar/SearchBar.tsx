@@ -47,7 +47,7 @@ export const SearchBar = React.forwardRef<HTMLInputElement, Props>(
             type="submit"
             className=" relative rounded-r border-l-0 border-2 border-transparent bg-orange-500 px-2 py-1.5 text-sm
          text-white transition-colors hover:bg-orange-600 focus:border-transparent
-        focus:ring-transparent active:bg-orange-800  focus:outline-none focus:ring-1 focus:ring-orange-600"
+         active:bg-orange-800  focus:outline-none focus:ring-1 focus:ring-orange-600"
             aria-label="Search button"
             role="button"
           >
